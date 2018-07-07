@@ -1,5 +1,5 @@
 # server-canvas
-1) A server canvas app created using React 16.3.2, Redux 4.0.0 and Bulma.
+1)A server canvas app created using React 16.3.2, Redux 4.0.0 and Bulma.
 
 2)execute the following commands to get the app running.
 

@@ -33,10 +33,10 @@ export class AppListItem extends React.Component {
   };
 
   onKillClick = () => {
-    const getServerWithSameAppInstance = appName => {
-      return this.props.servers.find(
-        server => server.appsRunning[0].name === appName
-      );
+    const getTheServerWithAppInstance = appName => {
+      return this.props.servers
+        .filter(server => server.appsRunning.length > 0)
+        .find(server => server.appsRunning[0].name === appName);
     };
 
     this.props.killInstance(
@@ -45,7 +45,7 @@ export class AppListItem extends React.Component {
         name: this.props.name,
         isRunning: false
       },
-      getServerWithSameAppInstance(this.props.name)
+      getTheServerWithAppInstance(this.props.name)
     );
   };
   render() {

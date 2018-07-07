@@ -5,14 +5,14 @@ import { destroyServer } from "../actions/servers";
 export class DestroyServer extends React.Component {
   onClick = () => {
     //get the Id of the latest server
-    let latestServerId = Math.max.apply(
+    const latestServerId = Math.max.apply(
       Math,
       this.props.servers.map(function(server) {
         return server.id;
       })
     );
     //filter out the latest server from the servers list
-    let filteredServers = this.props.servers.filter(server => {
+    const filteredServers = this.props.servers.filter(server => {
       return server.id !== latestServerId;
     });
     this.props.destroyServer(filteredServers);
